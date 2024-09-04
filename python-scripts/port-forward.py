@@ -38,7 +38,7 @@ def port_forward_pod(namespace, pod_starts_with, local_port, remote_port):
 
 def port_forward():
     success = True
-    if not port_forward_pod('team13', 'di-transformations', 6090, 6090):
+    if not port_forward_pod("team13", "di-t", 6090, 6090):
         success = False
 
     return success
