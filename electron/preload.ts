@@ -1,7 +1,5 @@
 import { ipcRenderer, contextBridge } from "electron";
 
-import { pgClient } from "../services";
-
 declare global {
   interface Window {
     Main: typeof api;

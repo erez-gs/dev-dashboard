@@ -38,12 +38,9 @@ def port_forward_pod(namespace, pod_starts_with, local_port, remote_port):
 
 def port_forward():
     success = True
-    if not port_forward_pod('team13', 'api-backend-deployment', 50051, 50051):
+    if not port_forward_pod('team13', 'di-transformations', 6090, 6090):
         success = False
-    if not port_forward_pod('team13', 'postgres-dashboard', 5432, 5432):
-        success = False
-    if not port_forward_pod('team13', 'timescaledb-single-0', 5433, 5432):
-        success = False
+
     return success
 
 def disable_port_forward():

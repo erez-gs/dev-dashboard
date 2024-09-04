@@ -71,29 +71,11 @@ export function makeDashboardPortForward(): string {
   function portForward(): string {
     const backendPortForwardErrorMsg: string = portForwardPod(
       "team13",
-      "api-backend-deployment",
-      50051,
-      50051
+      "di-transformations",
+      6090,
+      6090
     );
     if (backendPortForwardErrorMsg) return backendPortForwardErrorMsg;
-
-    const postgresDashboardPortForwardErrorMsg: string = portForwardPod(
-      "team13",
-      "postgres-dashboard",
-      5432,
-      5432
-    );
-    if (postgresDashboardPortForwardErrorMsg) {
-      return postgresDashboardPortForwardErrorMsg;
-    }
-
-    const timescaleDbPortForwardErrorMsg: string = portForwardPod(
-      "team13",
-      "timescaledb-single-0",
-      5433,
-      5432
-    );
-    if (timescaleDbPortForwardErrorMsg) return timescaleDbPortForwardErrorMsg;
 
     return "Port forwarding finished successfully";
   }
